@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Scientific calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body translate="no">
+    <div class="calculator">
+      <span class="logo">Casio</span>
+      <span class="model">fx-100MS</span>
+      <span class="svpam">S-V.P.A.M.</span>
+
+      <div class="screen">
+        <div class="input" id="display"></div>
+      </div>
+
+      <div class="modifiers">
+        <button class="shift center-shift" tabindex="1"></button>
+        <button class="alpha center-alpha" tabindex="2"></button>
+        <button class="on center-shift" tabindex="4" id="on-button"></button>
+        <button class="mode" tabindex="3"></button>
+      </div>
+
+      <div class="replay">Replay</div>
+
+      <table class="function-keys">
+        <tr>
+          <td><button class="reciprocal center-shift">calc</button></td>
+          <td><button class="combin center-shift">∫ dx</button></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button class="pol center-shift">
+              x<span class="sup">-1</span>
+            </button>
+          </td>
+          <td>
+            <button class="cube center-shift">
+              x<span class="sup">3</span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="frac center-shift">
+              a<span class="sup">b</span>/<span class="xxs">c</span>
+            </button>
+          </td>
+          <td><button onclick="calculateSquareRoot()">&radic;</button></td>
+          <td>
+            <button class="square" onclick="calculateSquare()">
+              x<span class="sup">2</span>
+            </button>
+          </td>
+          <td>
+            <button class="pow center-shift" onclick="calculatePower()">
+              ^
+            </button>
+          </td>
+          <td>
+            <button class="log center-shift" onclick="calculateLog()">
+              log
+            </button>
+          </td>
+          <td><button class="ln" onclick="calculateLn()">ln</button></td>
+        </tr>
+        <tr>
+          <td><button class="minus">(&minus;)</button></td>
+          <td><button class="deg">&deg;&prime;&Prime;</button></td>
+          <td><button class="hyp">hyp</button></td>
+          <td>
+            <button class="sin" onclick="calculateTrig('sin')">sin</button>
+          </td>
+          <td>
+            <button class="cos" onclick="calculateTrig('cos')">cos</button>
+          </td>
+          <td>
+            <button class="tan" onclick="calculateTrig('tan')">tan</button>
+          </td>
+        </tr>
+        <tr>
+          <td><button class="rcl center-shift">RCL</button></td>
+          <td><button class="eng center-shift">ENG</button></td>
+          <td><button class="open-paren">(</button></td>
+          <td><button class="close-paren">)</button></td>
+          <td><button class="comma">,</button></td>
+          <td><button class="mem-plus">M+</button></td>
+        </tr>
+      </table>
+
+      <table class="basic-keys">
+        <tr>
+          <td><button onclick="appendNumber(7)">7</button></td>
+          <td><button onclick="appendNumber(8)">8</button></td>
+          <td><button onclick="appendNumber(9)">9</button></td>
+          <td>
+            <button class="pink del center-shift" onclick="deleteLast()">
+              DEL
+            </button>
+          </td>
+          <td>
+            <button class="pink ac center-shift" onclick="clearDisplay()">
+              AC
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><button onclick="appendNumber(4)">4</button></td>
+          <td><button onclick="appendNumber(5)">5</button></td>
+          <td><button onclick="appendNumber(6)">6</button></td>
+          <td>
+            <button class="X center-shift" onclick="appendOperator('*')">
+              ×
+            </button>
+          </td>
+          <td>
+            <button class="divison center-shift" onclick="appendOperator('/')">
+              &divide;
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="one center-shift" onclick="appendNumber(1)">
+              1
+            </button>
+          </td>
+          <td>
+            <button class="two center-shift" onclick="appendNumber(2)">
+              2
+            </button>
+          </td>
+          <td><button onclick="appendNumber(3)">3</button></td>
+          <td><button onclick="appendOperator('+')">+</button></td>
+          <td><button onclick="appendOperator('-')">−</button></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="zero center-shift" onclick="appendNumber(0)">
+              0
+            </button>
+          </td>
+          <td>
+            <button class="period center-shift" onclick="appendDot()">.</button>
+          </td>
+          <td><button class="exp center-shift">EXP</button></td>
+          <td><button class="ans center-shift">Ans</button></td>
+          <td>
+            <button class="equals center-shift" onclick="calculateResult()">
+              =
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
